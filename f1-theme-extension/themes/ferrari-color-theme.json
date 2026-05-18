@@ -1,0 +1,56 @@
+{
+  "name": "Ferrari",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#0D0D0D",
+    "editor.foreground": "#FFFFFF",
+
+    "activityBar.background": "#DC0000",
+    "activityBar.foreground": "#FFFFFF",
+
+    "sideBar.background": "#111111",
+    "sideBar.foreground": "#FFFFFF",
+
+    "titleBar.activeBackground": "#DC0000",
+    "titleBar.activeForeground": "#FFFFFF",
+
+    "statusBar.background": "#DC0000",
+    "statusBar.foreground": "#FFFFFF",
+
+    "editorCursor.foreground": "#DC0000",
+
+    "editor.lineHighlightBackground": "#1A1A1A",
+
+    "editor.selectionBackground": "#5A0000",
+
+    "button.background": "#DC0000",
+    "button.foreground": "#FFFFFF"
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "keyword"
+      ],
+      "settings": {
+        "foreground": "#DC0000"
+      }
+    },
+    {
+      "scope": [
+        "string"
+      ],
+      "settings": {
+        "foreground": "#FFB347"
+      }
+    },
+    {
+      "scope": [
+        "comment"
+      ],
+      "settings": {
+        "foreground": "#6A9955",
+        "fontStyle": "italic"
+      }
+    }
+  ]
+}

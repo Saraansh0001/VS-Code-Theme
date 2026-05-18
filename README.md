@@ -1,0 +1,4 @@
+npm install -g yo generator-code
+
+yo code
+
