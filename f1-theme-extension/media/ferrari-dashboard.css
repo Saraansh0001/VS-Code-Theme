@@ -1,0 +1,353 @@
+:root {
+	--black: #050507;
+	--carbon: #0b0b0f;
+	--carbon-soft: #15151b;
+	--red: #dc0000;
+	--red-hot: #ff2800;
+	--red-dark: #650000;
+	--gold: #ffcc33;
+	--text: #f8f8fb;
+	--muted: #aeb0ba;
+	--line: rgba(255, 40, 0, 0.28);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-width: 320px;
+	margin: 0;
+	color: var(--text);
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.035) 25%, transparent 25%) 0 0 / 18px 18px,
+		linear-gradient(225deg, rgba(255, 255, 255, 0.035) 25%, transparent 25%) 0 0 / 18px 18px,
+		radial-gradient(circle at 50% 0%, rgba(255, 40, 0, 0.26), transparent 34rem),
+		linear-gradient(180deg, #08080b 0%, #030304 100%);
+	font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	overflow-x: hidden;
+}
+
+button {
+	font: inherit;
+}
+
+.dashboard-shell {
+	width: min(1440px, 100%);
+	margin: 0 auto;
+	padding: clamp(18px, 3vw, 42px);
+	animation: fadeIn 700ms ease-out both;
+}
+
+.hero {
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(280px, 0.82fr) minmax(360px, 1.18fr);
+	gap: clamp(22px, 4vw, 56px);
+	min-height: min(720px, 78vh);
+	padding: clamp(24px, 5vw, 72px);
+	border: 1px solid rgba(255, 40, 0, 0.36);
+	border-radius: 18px;
+	background:
+		linear-gradient(120deg, rgba(10, 10, 13, 0.96), rgba(20, 0, 0, 0.9) 42%, rgba(6, 6, 8, 0.96)),
+		repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.035) 0 2px, transparent 2px 10px);
+	box-shadow:
+		0 0 0 1px rgba(255, 204, 51, 0.08) inset,
+		0 34px 100px rgba(0, 0, 0, 0.58),
+		0 0 56px rgba(220, 0, 0, 0.22);
+	overflow: hidden;
+}
+
+.hero::before {
+	position: absolute;
+	inset: 0;
+	content: "";
+	background:
+		linear-gradient(90deg, transparent, rgba(255, 40, 0, 0.14), transparent),
+		linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 28%);
+	pointer-events: none;
+}
+
+.hero-glow {
+	position: absolute;
+	inset: auto -20% -35% 18%;
+	height: 46%;
+	background: radial-gradient(ellipse, rgba(255, 40, 0, 0.76), rgba(220, 0, 0, 0.24) 42%, transparent 72%);
+	filter: blur(28px);
+	animation: redGlow 2.9s ease-in-out infinite alternate;
+}
+
+.hero-copy {
+	position: relative;
+	z-index: 2;
+	align-self: center;
+	max-width: 560px;
+}
+
+.eyebrow,
+.card-kicker {
+	margin: 0 0 10px;
+	color: var(--gold);
+	font-size: 0.78rem;
+	font-weight: 800;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+	margin: 0;
+}
+
+h1 {
+	max-width: 10ch;
+	font-size: clamp(3rem, 7vw, 7.25rem);
+	line-height: 0.9;
+	font-weight: 900;
+	text-transform: uppercase;
+	text-shadow: 0 0 22px rgba(255, 40, 0, 0.34);
+}
+
+.lede {
+	max-width: 44rem;
+	margin-top: 22px;
+	color: var(--muted);
+	font-size: clamp(1rem, 1.7vw, 1.25rem);
+	line-height: 1.6;
+}
+
+.hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-top: 32px;
+}
+
+.neon-button,
+.card-button {
+	min-height: 44px;
+	padding: 0 18px;
+	border: 1px solid rgba(255, 40, 0, 0.55);
+	border-radius: 999px;
+	color: var(--text);
+	background: rgba(12, 12, 16, 0.72);
+	box-shadow: 0 0 0 rgba(255, 40, 0, 0);
+	cursor: pointer;
+	transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.neon-button.primary {
+	background: linear-gradient(135deg, var(--red), var(--red-hot));
+	border-color: rgba(255, 204, 51, 0.62);
+	font-weight: 900;
+}
+
+.neon-button:hover,
+.card-button:hover,
+.neon-button:focus-visible,
+.card-button:focus-visible {
+	transform: translateY(-2px);
+	border-color: var(--red-hot);
+	background: rgba(255, 40, 0, 0.16);
+	box-shadow: 0 0 20px rgba(255, 40, 0, 0.5), 0 0 46px rgba(220, 0, 0, 0.24);
+	outline: none;
+}
+
+.car-stage {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 0;
+}
+
+.car-stage::before {
+	position: absolute;
+	inset: 16% 0 8%;
+	content: "";
+	background: linear-gradient(90deg, transparent, rgba(255, 40, 0, 0.44), transparent);
+	filter: blur(26px);
+	animation: redGlow 2.4s ease-in-out infinite alternate;
+}
+
+.hero-car {
+	position: relative;
+	width: min(100%, 900px);
+	max-height: 68vh;
+	object-fit: contain;
+	filter: drop-shadow(0 30px 48px rgba(0, 0, 0, 0.72)) drop-shadow(0 0 28px rgba(255, 40, 0, 0.42));
+	animation: carRise 850ms ease-out 160ms both;
+}
+
+.telemetry-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: clamp(16px, 2.4vw, 26px);
+	margin-top: clamp(18px, 3vw, 34px);
+}
+
+.speed-card {
+	position: relative;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 18px;
+	min-height: 220px;
+	padding: 22px;
+	border: 1px solid rgba(255, 40, 0, 0.28);
+	border-radius: 14px;
+	background:
+		linear-gradient(145deg, rgba(255, 40, 0, 0.12), transparent 42%),
+		linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+		rgba(11, 11, 15, 0.88);
+	box-shadow: 0 18px 48px rgba(0, 0, 0, 0.38), 0 0 28px rgba(220, 0, 0, 0.08);
+	overflow: hidden;
+	transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.speed-card:hover {
+	transform: translateY(-4px);
+	border-color: rgba(255, 40, 0, 0.72);
+	box-shadow: 0 26px 70px rgba(0, 0, 0, 0.5), 0 0 34px rgba(255, 40, 0, 0.22);
+}
+
+.speed-card::after {
+	position: absolute;
+	inset: auto 14px 12px 14px;
+	height: 2px;
+	content: "";
+	background: linear-gradient(90deg, transparent, var(--red-hot), transparent);
+	opacity: 0.78;
+}
+
+.speed-card h2 {
+	font-size: 1.15rem;
+	text-transform: uppercase;
+}
+
+.speed-card p:not(.card-kicker) {
+	margin-top: 8px;
+	color: var(--muted);
+	line-height: 1.45;
+}
+
+.speed-card .card-button {
+	grid-column: 1 / -1;
+	align-self: end;
+	width: fit-content;
+}
+
+.gauge {
+	--gauge-color: var(--red-hot);
+	--value: 78;
+	display: grid;
+	place-items: center;
+	width: 96px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background:
+		radial-gradient(circle, #09090c 0 54%, transparent 55%),
+		conic-gradient(var(--gauge-color) calc(var(--value) * 1%), rgba(255, 255, 255, 0.08) 0);
+	box-shadow: inset 0 0 24px rgba(255, 40, 0, 0.24), 0 0 24px rgba(255, 40, 0, 0.12);
+}
+
+.gauge span {
+	color: var(--text);
+	font-size: 1.5rem;
+	font-weight: 900;
+}
+
+.gauge-lap {
+	--value: 78;
+}
+
+.gauge-hot {
+	--gauge-color: var(--gold);
+	--value: 62;
+}
+
+.gauge-cool {
+	--gauge-color: #aeb0ba;
+	--value: 44;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes carRise {
+	from {
+		opacity: 0;
+		transform: translateY(22px) scale(0.98);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes redGlow {
+	from {
+		opacity: 0.52;
+		transform: scaleX(0.88);
+	}
+	to {
+		opacity: 1;
+		transform: scaleX(1.04);
+	}
+}
+
+@media (max-width: 980px) {
+	.hero {
+		grid-template-columns: 1fr;
+		min-height: auto;
+	}
+
+	h1 {
+		max-width: 12ch;
+	}
+
+	.car-stage {
+		min-height: 280px;
+	}
+
+	.telemetry-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 560px) {
+	.dashboard-shell {
+		padding: 12px;
+	}
+
+	.hero {
+		padding: 22px;
+		border-radius: 12px;
+	}
+
+	.hero-actions {
+		flex-direction: column;
+	}
+
+	.neon-button,
+	.card-button {
+		width: 100%;
+	}
+
+	.speed-card {
+		grid-template-columns: 1fr;
+	}
+
+	.gauge {
+		width: 86px;
+	}
+}

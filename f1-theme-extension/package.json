@@ -29,7 +29,8 @@
     "onCommand:scuderiaFerrari.prancingHorseMode",
     "onCommand:scuderiaFerrari.addRaceLap",
     "onCommand:scuderiaFerrari.resetRaceLapCounter",
-    "onCommand:scuderiaFerrari.startPitStopTimer"
+    "onCommand:scuderiaFerrari.startPitStopTimer",
+    "onCommand:scuderiaFerrari.openDashboard"
   ],
   "main": "./out/extension.js",
   "extensionKind": [
@@ -55,6 +56,11 @@
       {
         "command": "scuderiaFerrari.startPitStopTimer",
         "title": "Start Pit Stop Timer",
+        "category": "Scuderia Ferrari"
+      },
+      {
+        "command": "scuderiaFerrari.openDashboard",
+        "title": "Open Ferrari F1 Dashboard",
         "category": "Scuderia Ferrari"
       }
     ],
