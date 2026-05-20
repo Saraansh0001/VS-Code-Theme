@@ -1,28 +1,157 @@
 {
-  "name": "f1-theme-extension",
-  "displayName": "f1-theme-extension",
-  "description": "F1 themed VS Code extension",
-  "version": "0.0.1",
+  "name": "scuderia-ferrari-racing-theme",
+  "displayName": "Scuderia Ferrari Racing Theme",
+  "description": "A full-throttle F1 Ferrari-inspired VS Code theme with racing commands, custom Ferrari color tokens, walkthroughs, and deep workbench/token coverage.",
+  "version": "1.0.0",
+  "publisher": "scuderia-codex",
+  "icon": "media/ferrari-icon.png",
   "engines": {
     "vscode": "^1.120.0"
   },
   "categories": [
+    "Themes",
     "Other"
   ],
-  "activationEvents": [],
+  "keywords": [
+    "f1",
+    "formula one",
+    "ferrari",
+    "scuderia",
+    "racing",
+    "theme",
+    "red",
+    "dark theme",
+    "motorsport",
+    "prancing horse"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:scuderiaFerrari.prancingHorseMode",
+    "onCommand:scuderiaFerrari.addRaceLap",
+    "onCommand:scuderiaFerrari.resetRaceLapCounter",
+    "onCommand:scuderiaFerrari.startPitStopTimer"
+  ],
   "main": "./out/extension.js",
+  "extensionKind": [
+    "ui"
+  ],
   "contributes": {
     "commands": [
       {
-        "command": "f1-theme-extension.helloWorld",
-        "title": "Hello World"
+        "command": "scuderiaFerrari.prancingHorseMode",
+        "title": "PRANCING HORSE MODE",
+        "category": "Scuderia Ferrari"
+      },
+      {
+        "command": "scuderiaFerrari.addRaceLap",
+        "title": "Add Race Lap",
+        "category": "Scuderia Ferrari"
+      },
+      {
+        "command": "scuderiaFerrari.resetRaceLapCounter",
+        "title": "Reset Race Lap Counter",
+        "category": "Scuderia Ferrari"
+      },
+      {
+        "command": "scuderiaFerrari.startPitStopTimer",
+        "title": "Start Pit Stop Timer",
+        "category": "Scuderia Ferrari"
       }
-    ] ,
+    ],
+    "colors": [
+      {
+        "id": "ferrariTheme.scuderiaRed",
+        "description": "Primary Ferrari racing red used for high-energy accents.",
+        "defaults": {
+          "dark": "#DC0000",
+          "light": "#DC0000",
+          "highContrast": "#FF2800"
+        }
+      },
+      {
+        "id": "ferrariTheme.corsaRed",
+        "description": "Rosso Corsa highlight for active controls and selections.",
+        "defaults": {
+          "dark": "#FF2800",
+          "light": "#C80000",
+          "highContrast": "#FF4D3D"
+        }
+      },
+      {
+        "id": "ferrariTheme.carbonBlack",
+        "description": "Carbon fiber black used for editor and panel backgrounds.",
+        "defaults": {
+          "dark": "#0A0A0D",
+          "light": "#1B1B1F",
+          "highContrast": "#000000"
+        }
+      },
+      {
+        "id": "ferrariTheme.pitLaneGold",
+        "description": "Warm gold accent for badges, warnings, and racing telemetry.",
+        "defaults": {
+          "dark": "#FFCC33",
+          "light": "#B8860B",
+          "highContrast": "#FFE066"
+        }
+      },
+      {
+        "id": "ferrariTheme.asphaltGray",
+        "description": "Neutral asphalt gray used for dividers, borders, and secondary text.",
+        "defaults": {
+          "dark": "#2B2D33",
+          "light": "#5A5D66",
+          "highContrast": "#777A86"
+        }
+      },
+      {
+        "id": "ferrariTheme.telemetryGreen",
+        "description": "Track telemetry green for success states and lap feedback.",
+        "defaults": {
+          "dark": "#00D084",
+          "light": "#008F5D",
+          "highContrast": "#24F0A6"
+        }
+      }
+    ],
     "themes": [
       {
         "label": "Ferrari Racing Red",
         "uiTheme": "vs-dark",
         "path": "./themes/ferrari-color-theme.json"
+      }
+    ],
+    "walkthroughs": [
+      {
+        "id": "scuderiaFerrari.trackBriefing",
+        "title": "Scuderia Ferrari Track Briefing",
+        "description": "Set up the Ferrari Racing Red theme, try PRANCING HORSE MODE, and keep a lap rhythm from the status bar.",
+        "steps": [
+          {
+            "id": "scuderiaFerrari.selectTheme",
+            "title": "Switch to Ferrari Racing Red",
+            "description": "Open the Color Theme picker and choose Ferrari Racing Red for the full carbon-black and Rosso Corsa cockpit.",
+            "completionEvents": [
+              "onSettingChanged:workbench.colorTheme"
+            ]
+          },
+          {
+            "id": "scuderiaFerrari.prancingHorseMode",
+            "title": "Run PRANCING HORSE MODE",
+            "description": "Use the Command Palette to run PRANCING HORSE MODE and light up the lap counter.",
+            "completionEvents": [
+              "onCommand:scuderiaFerrari.prancingHorseMode"
+            ]
+          },
+          {
+            "id": "scuderiaFerrari.pitStopTimer",
+            "title": "Practice a Pit Stop",
+            "description": "Run Start Pit Stop Timer for a quick timed notification that feels like a garage call.",
+            "completionEvents": [
+              "onCommand:scuderiaFerrari.startPitStopTimer"
+            ]
+          }
+        ]
       }
     ]
   },
